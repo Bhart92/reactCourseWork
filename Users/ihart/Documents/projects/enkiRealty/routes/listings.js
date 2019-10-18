@@ -70,5 +70,13 @@ router.post('/', upload.single('image'), function(req, res){
     });
   }
 });
-
+router.get('/:id', function(req, res){
+  Listing.findById(req.params.id, function(err, listing){
+    if(err){
+      req.flash('error', 'Oops something went wrong. Please try again.');
+      res.redirect('back');
+    }
+    res.render('listings/show', {listing: listing});
+  })
+});
 module.exports = router;
