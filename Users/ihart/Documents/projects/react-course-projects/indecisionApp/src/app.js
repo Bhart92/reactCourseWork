@@ -1,41 +1,68 @@
-console.log('app.js is running');
-
-//JSX -- Javascript XML
-  //conditional rendering using
-    //if statements
-    //ternary operators
-    //and statements
-
-
-
-const user = {
-  name: 'Indecision Ap',
-  age: 24
-};
-function getLocation(location){
-  if(location){
-    return <p>Location: {location}</p>;
+class IndecisionApp extends React.Component{
+  render(){
+    return(
+      <div>
+      <Header />
+      <Action />
+      <Options />
+      <AddOption />
+      </div>
+    );
   }
 }
-//alternative to app.options.length ternary operator
-// function renderPTag(array){
-//   if(array && array.length > 0){
-//     return <p>Here are your options</p>;
-//   } else{
-//     return <p>No options</p>;
-//   }
-// }
+class Header extends React.Component {
+  render(){
+    return (
+      <div>
+      <h1>Indecision App</h1>
+      <h2>Put your life in the hands of a computer</h2>
+      </div>
+    );
+  }
+}
+class Action extends React.Component{
+  render(){
+    return (
+      <div>
+        <button>What should I do?</button>
+      </div>
+    );
+  }
+}
+class Options extends React.Component{
+  render(){
+    return (
+      <div>
+        <ol>
+        <Option />
+        </ol>
+      </div>
+    );
+  }
+}
+class Option extends React.Component{
+  render(){
+    return (
+      <div>
+        <li>Option</li>
+        <li>Option</li>
+        <li>Option</li>
+      </div>
+    );
+  }
+}
+class AddOption extends React.Component{
+  render(){
+    return (
+      <div>
+      <form>
+      <input type='text' name='option'/>
+      <button>Add option</button>
+      </form>
+      </div>
+    );
+  }
+}
 
-const renderReact = () => {
-  const template2 = (
-  <div>
-  <h1>Count: {count}</h1>
-  <button onClick={addOne}>+1</button>
-  <button onClick={subOne}>-1</button>
-  <button onClick={reset}>reset</button>
-  </div>
-  );
-  const appRoot = document.getElementById('app');
 
-  ReactDOM.render(template2, appRoot);
-};
+ReactDOM.render(<IndecisionApp />, document.getElementById('app'));
