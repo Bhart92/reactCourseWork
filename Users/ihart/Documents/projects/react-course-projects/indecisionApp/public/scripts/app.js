@@ -20,12 +20,15 @@ var IndecisionApp = function (_React$Component) {
   _createClass(IndecisionApp, [{
     key: 'render',
     value: function render() {
+      var title = 'Indecision';
+      var subTitle = 'Put your life in the hands of a computer';
+      var options = ['1', '2', '3'];
       return React.createElement(
         'div',
         null,
-        React.createElement(Header, null),
+        React.createElement(Header, { title: title, subTitle: subTitle }),
         React.createElement(Action, null),
-        React.createElement(Options, null),
+        React.createElement(Options, { options: options }),
         React.createElement(AddOption, null)
       );
     }
@@ -52,12 +55,12 @@ var Header = function (_React$Component2) {
         React.createElement(
           'h1',
           null,
-          'Indecision App'
+          this.props.title
         ),
         React.createElement(
           'h2',
           null,
-          'Put your life in the hands of a computer'
+          this.props.subTitle
         )
       );
     }
@@ -76,6 +79,11 @@ var Action = function (_React$Component3) {
   }
 
   _createClass(Action, [{
+    key: 'handlePick',
+    value: function handlePick() {
+      alert('handled');
+    }
+  }, {
     key: 'render',
     value: function render() {
       return React.createElement(
@@ -83,7 +91,7 @@ var Action = function (_React$Component3) {
         null,
         React.createElement(
           'button',
-          null,
+          { onClick: this.handlePick },
           'What should I do?'
         )
       );
@@ -96,13 +104,21 @@ var Action = function (_React$Component3) {
 var Options = function (_React$Component4) {
   _inherits(Options, _React$Component4);
 
-  function Options() {
+  function Options(props) {
     _classCallCheck(this, Options);
 
-    return _possibleConstructorReturn(this, (Options.__proto__ || Object.getPrototypeOf(Options)).apply(this, arguments));
+    var _this4 = _possibleConstructorReturn(this, (Options.__proto__ || Object.getPrototypeOf(Options)).call(this, props));
+
+    _this4.removeAll = _this4.removeAll.bind(_this4);
+    return _this4;
   }
 
   _createClass(Options, [{
+    key: 'removeAll',
+    value: function removeAll() {
+      console.log(this.props.options);
+    }
+  }, {
     key: 'render',
     value: function render() {
       return React.createElement(
@@ -111,7 +127,14 @@ var Options = function (_React$Component4) {
         React.createElement(
           'ol',
           null,
-          React.createElement(Option, null)
+          this.props.options.map(function (option) {
+            return React.createElement(Option, { key: option, optionText: option });
+          })
+        ),
+        React.createElement(
+          'button',
+          { onClick: this.removeAll },
+          'Remove All'
         )
       );
     }
@@ -135,21 +158,7 @@ var Option = function (_React$Component5) {
       return React.createElement(
         'div',
         null,
-        React.createElement(
-          'li',
-          null,
-          'Option'
-        ),
-        React.createElement(
-          'li',
-          null,
-          'Option'
-        ),
-        React.createElement(
-          'li',
-          null,
-          'Option'
-        )
+        this.props.optionText
       );
     }
   }]);
@@ -167,6 +176,16 @@ var AddOption = function (_React$Component6) {
   }
 
   _createClass(AddOption, [{
+    key: 'handleOption',
+    value: function handleOption(e) {
+      e.preventDefault();
+      var option = e.target.elements.option.value.trim();
+      if (option) {
+        alert('there is an option');
+      }
+      alert('no options added');
+    }
+  }, {
     key: 'render',
     value: function render() {
       return React.createElement(
@@ -174,7 +193,7 @@ var AddOption = function (_React$Component6) {
         null,
         React.createElement(
           'form',
-          null,
+          { onSubmit: this.handleOption },
           React.createElement('input', { type: 'text', name: 'option' }),
           React.createElement(
             'button',
