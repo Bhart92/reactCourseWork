@@ -20,7 +20,7 @@ var IndecisionApp = function (_React$Component) {
     _this.handleAlertOption = _this.handleAlertOption.bind(_this);
     _this.handleAddOption = _this.handleAddOption.bind(_this);
     _this.state = {
-      options: []
+      options: props.options
     };
     return _this;
   }
@@ -29,9 +29,7 @@ var IndecisionApp = function (_React$Component) {
     key: 'handleDeleteOptions',
     value: function handleDeleteOptions() {
       this.setState(function () {
-        return {
-          options: []
-        };
+        return { options: [] };
       });
     }
   }, {
@@ -49,20 +47,17 @@ var IndecisionApp = function (_React$Component) {
         return 'this option already exits';
       }
       this.setState(function (prevState) {
-        return {
-          options: prevState.options.concat(option)
-        };
+        return { options: prevState.options.concat(option) };
       });
     }
   }, {
     key: 'render',
     value: function render() {
-      var title = 'Indecision';
       var subTitle = 'Put your life in the hands of a computer';
       return React.createElement(
         'div',
         null,
-        React.createElement(Header, { title: title, subTitle: subTitle }),
+        React.createElement(Header, { subTitle: subTitle }),
         React.createElement(Action, {
           hasOptions: this.state.options.length > 0,
           handleAlertOption: this.handleAlertOption
@@ -81,6 +76,9 @@ var IndecisionApp = function (_React$Component) {
   return IndecisionApp;
 }(React.Component);
 
+IndecisionApp.defaultProps = {
+  options: []
+};
 var Header = function Header(props) {
   return React.createElement(
     'div',
@@ -90,12 +88,15 @@ var Header = function Header(props) {
       null,
       props.title
     ),
-    React.createElement(
+    props.subTitle && React.createElement(
       'h2',
       null,
       props.subTitle
     )
   );
+};
+Header.defaultProps = {
+  title: 'Indecision'
 };
 var Action = function Action(props) {
   return React.createElement(
@@ -190,4 +191,4 @@ var AddOption = function (_React$Component2) {
   return AddOption;
 }(React.Component);
 
-ReactDOM.render(React.createElement(IndecisionApp, null), document.getElementById('app'));
+ReactDOM.render(React.createElement(IndecisionApp, { options: ['1', '2'] }), document.getElementById('app'));
