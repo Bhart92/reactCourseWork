@@ -2,7 +2,7 @@ import React from 'react';
 
 const AddExpensePage = () => (
   <div>
-  Add Expense
+    This is from my add expense component
   </div>
 );
 
