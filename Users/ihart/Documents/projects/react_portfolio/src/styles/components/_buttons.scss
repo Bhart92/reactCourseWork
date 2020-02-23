@@ -1,0 +1,38 @@
+.button-outline{
+    background: transparent;
+    border: 1px solid #333;
+    border-radius: 3px;
+    color: #333;
+    opacity: .5;
+    outline: none;
+    padding: 7px 15px;
+    transition: .25s all ease-in-out;
+    align-self: center;
+    &:hover{
+        background: $blue;
+        border: 1px solid $blue;
+        color: $off-white;
+        transform: scale(1.05);
+    }
+    &:active{
+        transform: scale(.99);
+    }
+}
+.button-fill{
+    @extend .button-outline;
+    background: $blue;
+    color: $off-white;
+    border: 1px solid $blue;
+    &:hover{
+        background: transparent;
+        border: 1px solid #000;
+        color: #000;
+        transform: scale(1.05);
+        
+    }
+}
+.button:disabled{ 
+    border: 1px solid $dark-grey;
+    color: #868686;
+    transform: scale(1);
+}

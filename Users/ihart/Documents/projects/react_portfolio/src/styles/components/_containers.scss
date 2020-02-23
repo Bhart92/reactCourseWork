@@ -1,0 +1,22 @@
+.main-container{
+    display: flex;
+}
+.section-container{
+    position: absolute;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    height: 100vh;
+    width: 75%;
+    overflow-y: scroll;
+    z-index: 1;
+}
+.section-container--title{
+    color: #333;
+    margin: 0;
+    margin-top: 5.5rem;
+    text-align: center;
+}
+.section-container.contact-overflow{
+    overflow: hidden;
+}
