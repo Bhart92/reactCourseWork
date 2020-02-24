@@ -8,7 +8,35 @@ const workoutData = {
 			url: 'https://something.com'
 		},
 		{
-			name: 'bench',
+			name: 'incline',
+			url: 'https://something.com'
+		},
+		{
+			name: 'decline',
+			url: 'https://something.com'
+		},
+		{
+			name: 'deumbell flies',
+			url: 'https://something.com'
+		},
+		{
+			name: 'cable flies',
+			url: 'https://something.com'
+		},
+		{
+			name: 'incline cable flies',
+			url: 'https://something.com'
+		},
+		{
+			name: 'decline cable flies',
+			url: 'https://something.com'
+		},
+		{
+			name: 'push ups',
+			url: 'https://something.com'
+		},
+		{
+			name: 'triangle pushps',
 			url: 'https://something.com'
 		},
 		{

@@ -1,12 +1,28 @@
-import React, { useContext} from 'react';
+import React, { useContext, useState} from 'react';
 import WorkoutContext from '../context/workoutContext';
 
- const GenerateForm = () => {
+  const GenerateForm = () => {
+    const workouts = useContext(WorkoutContext);
+    const [state, setState] = useState({
+        value: 'default'
+    });
+
+    const inputValue = (e) => {
+         const value = e.target.value; 
+         setState(() => ({
+             value
+         }))
+
+     };
+     const onSubmit = (e) => {
+        e.preventDefault();
+            
+     };
                 return (
                     < WorkoutContext.Provider>
                         <div>
-                        <form>              
-                            <select value={this.state.value}>
+                        <form onSubmit={onSubmit}>              
+                            <select value={state.value} onChange={inputValue}>
                                 <option value='default'> </option>
                                 <option value='chest'>Chest</option>
                                 <option value='back'>Back</option>
@@ -22,7 +38,7 @@ import WorkoutContext from '../context/workoutContext';
                 </div>
                     </WorkoutContext.Provider>
         );
-    };
+};
 
         export default GenerateForm;
     
