@@ -9,7 +9,7 @@ const LandingPage = () => {
         return(
             < WorkoutContext.Provider>
             <div>
-        {console.log(workouts.chest.workouts[randomPick])}
+        {/* {console.log(workouts.chest.workouts[randomPick])} */}
             <h1>Gainz</h1>
             <span>Workout Randomizer</span>
             <Link to='/dashboard'><button>Get Started</button>

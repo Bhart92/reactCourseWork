@@ -6,7 +6,7 @@ const DashboardPage = () => (
     <div>
         <h1>Generate workouts</h1>
         <GenerateForm />
-        < RandomDisplay />
+        <RandomDisplay />
     </div>
 );
 

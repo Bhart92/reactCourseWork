@@ -1,6 +1,6 @@
 import React from 'react';
 
-const workoutData = {
+export const workoutData = {
 	chest: {
 		value: 'chest',
 		workouts: [{
@@ -16,7 +16,7 @@ const workoutData = {
 			url: 'https://something.com'
 		},
 		{
-			name: 'deumbell flies',
+			name: 'dumbell flies',
 			url: 'https://something.com'
 		},
 		{
@@ -40,7 +40,7 @@ const workoutData = {
 			url: 'https://something.com'
 		},
 		{
-			name: 'bench',
+			name: 'inclined bench',
 			url: 'https://something.com'
 		}]
 	},
@@ -51,11 +51,39 @@ const workoutData = {
 			url: 'https://something.com'
 		},
 		{
-			name: 'pulldown',
+			name: 'bent over row',
 			url: 'https://something.com'
 		},
 		{
-			name: 'pulldown',
+			name: 'face-pull',
+			url: 'https://something.com'
+		},
+		{
+			name: 'Deadlifts',
+			url: 'https://something.com'
+		},
+		{
+			name: 'Dumbell rows',
+			url: 'https://something.com'
+		},
+		{
+			name: 'Suitcase rows',
+			url: 'https://something.com'
+		},
+		{
+			name: 'Good mornings',
+			url: 'https://something.com'
+		},
+		{
+			name: 'wide-grip pulldown',
+			url: 'https://something.com'
+		},
+		{
+			name: 'inward grip pull downs',
+			url: 'https://something.com'
+		},
+		{
+			name: 'hammergrip pull-up',
 			url: 'https://something.com'
 		}]
 	},
@@ -74,21 +102,6 @@ const workoutData = {
 			url: 'https://something.com'
 		}]
 	},
-	triceps: {
-		value: 'triceps',
-		workouts: [{
-			name: 'dips',
-			url: 'https://something.com'
-		},
-		{
-			name: 'dips',
-			url: 'https://something.com'
-		},
-		{
-			name: 'dips',
-			url: 'https://something.com'
-		}]
-	},
 	biceps: {
 		value: 'biceps',
 		workouts: [{
@@ -101,6 +114,21 @@ const workoutData = {
 		},
 		{
 			name: 'curl',
+			url: 'https://something.com'
+		}]
+	},
+	triceps: {
+		value: 'triceps',
+		workouts: [{
+			name: 'dips',
+			url: 'https://something.com'
+		},
+		{
+			name: 'dips',
+			url: 'https://something.com'
+		},
+		{
+			name: 'dips',
 			url: 'https://something.com'
 		}]
 	},
@@ -119,22 +147,6 @@ const workoutData = {
 			url: 'https://something.com'
 		}]
 	},
-	cardio: {
-		value: 'cardio',
-		workouts: [{
-			name: 'treadmill sprints',
-			url:'https://something.com'
-		},
-		{
-			name: 'treadmill sprints',
-			url:'https://something.com'
-		},
-		{
-			name: 'treadmill sprints',
-			url:'https://something.com'
-		}
-		]
-	},
 	abs: {
 		value: 'abs',
 		workouts: [{
@@ -150,8 +162,23 @@ const workoutData = {
 			url:'https://something.com'
 		}
 		]
+	},
+	cardio: {
+		value: 'cardio',
+		workouts: [{
+			name: 'treadmill sprints',
+			url:'https://something.com'
+		},
+		{
+			name: 'treadmill sprints',
+			url:'https://something.com'
+		},
+		{
+			name: 'treadmill sprints',
+			url:'https://something.com'
+		}
+		]
 	}
-
 };
 
 const WorkoutContext = React.createContext(workoutData);

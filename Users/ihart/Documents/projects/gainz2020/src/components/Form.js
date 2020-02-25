@@ -1,5 +1,6 @@
 import React, { useContext, useState} from 'react';
 import WorkoutContext from '../context/workoutContext';
+import workoutSelector from '../selectors/selector';
 
   const GenerateForm = () => {
     const workouts = useContext(WorkoutContext);
@@ -16,7 +17,9 @@ import WorkoutContext from '../context/workoutContext';
      };
      const onSubmit = (e) => {
         e.preventDefault();
-            
+        const working = workoutSelector(state, workouts);
+
+        
      };
                 return (
                     < WorkoutContext.Provider>
