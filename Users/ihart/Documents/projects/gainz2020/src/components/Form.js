@@ -1,12 +1,15 @@
 import React, { useContext, useState} from 'react';
+import DisplayedContext from '../context/displayedContext';
 import WorkoutContext from '../context/workoutContext';
 import workoutSelector from '../selectors/selector';
 
-  const GenerateForm = () => {
+  const GenerateForm = (props) => {
     const workouts = useContext(WorkoutContext);
     const [state, setState] = useState({
         value: 'default'
     });
+
+    const {currentWorkouts, setCurrenWorkouts} = useContext(DisplayedContext)
 
     const inputValue = (e) => {
          const value = e.target.value; 
@@ -19,6 +22,8 @@ import workoutSelector from '../selectors/selector';
         e.preventDefault();
         const workoutPackage = workoutSelector(state, workouts);
         console.log(workoutPackage);
+        console.log(currentWorkouts);
+            // this.props.handleSubmit();
      };
                 return (
                     < WorkoutContext.Provider>
