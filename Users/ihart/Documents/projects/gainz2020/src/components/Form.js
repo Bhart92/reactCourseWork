@@ -17,9 +17,8 @@ import workoutSelector from '../selectors/selector';
      };
      const onSubmit = (e) => {
         e.preventDefault();
-        const working = workoutSelector(state, workouts);
-
-        
+        const workoutPackage = workoutSelector(state, workouts);
+        console.log(workoutPackage);
      };
                 return (
                     < WorkoutContext.Provider>

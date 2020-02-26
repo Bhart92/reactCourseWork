@@ -1,31 +1,28 @@
 import {workoutData} from '../context/workoutContext';
-import randomizer from './randomizer';
 export default (state, workouts) => {
 
     switch(state.value){
         case 'chest':
             const {chest} = workoutData;
-            const chestData = {
-                 chestOne: chest.workouts[Math.floor(Math.random() * chest.workouts.length)],
-                 chestTwo: chest.workouts[Math.floor(Math.random() * chest.workouts.length)],
-                 chestThree: chest.workouts[Math.floor(Math.random() * chest.workouts.length)]
-            };
-            const {chestOne, chestTwo, chestThree} = chestData;
-            do {
-                let chestOne = chest.workouts[Math.floor(Math.random() * chest.workouts.length)];
-            } while(chestOne === chestThree);
-
-            do {
-               let chestTwo = chest.workouts[Math.floor(Math.random() * chest.workouts.length)];
-            } while(chestTwo === chestThree || chestTwo === chestOne);
-            return {chestOne, chestTwo, chestThree};
+            let selectedWorkouts = {
+                chestOne: chest.workouts[Math.floor(Math.random() * chest.workouts.length)],
+                chestTwo: chest.workouts[Math.floor(Math.random() * chest.workouts.length)],
+                chestThree:  chest.workouts[Math.floor(Math.random() * chest.workouts.length)]
+            }
+            return selectedWorkouts;
+            // console.log(chestWorkouts);
+            // console.log(chestOne);
+            // console.log(chestTwo);
+            // console.log(chestThree);
             break;
             case 'back':
                 const {back} = workoutData;
                 let backOne = back.workouts[Math.floor(Math.random() * back.workouts.length)]; 
                 let backTwo = back.workouts[Math.floor(Math.random() * back.workouts.length)];
                 let backThree = back.workouts[Math.floor(Math.random() * back.workouts.length)];
-
+                console.log(backOne);
+                console.log(backTwo);
+                console.log(backThree);
                 do {
                     backOne = back.workouts[Math.floor(Math.random() * back.workouts.length)];
                 } while(backOne === backThree);
