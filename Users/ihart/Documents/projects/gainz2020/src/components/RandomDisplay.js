@@ -1,13 +1,21 @@
 import React, { useContext, useState, useEffect} from 'react';
 import DisplayedContext from '../context/displayedContext';
-
-const RandomDisplay = () => {
+import RandomWorkout from './RandomWorkout';
+const RandomDisplay = (props) => {
     const {currentWorkouts, setCurrentWorkouts} = useContext(DisplayedContext);
-    console.log(currentWorkouts);
     return(
-    <div>{currentWorkouts.forEach((value) => {
-        return console.log(value);
-    })}</div>
+	<div>
+		<h1>Workouts</h1>
+		{currentWorkouts.length === 0 && <p>Generate some workouts to get started.</p>}
+		{
+			currentWorkouts.map((workout, index) => (
+				<RandomWorkout key={workout} 
+						name={workout.name}
+                        url={workout.url}/>
+			))
+		}
+	</div>
+
 
     );
 };

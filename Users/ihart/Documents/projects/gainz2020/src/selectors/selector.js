@@ -45,7 +45,7 @@ export default (state, workouts) => {
 	} else if(seletedShoulderWorkouts.shouldersTwo === seletedShoulderWorkouts.shouldersOne || seletedShoulderWorkouts.shouldersTwo === seletedShoulderWorkouts.shouldersThree){
 		seletedShoulderWorkouts.shouldersTwo = shoulders.workouts[Math.floor(Math.random() * shoulders.workouts.length)];
 	}
-            return seletedBackWorkouts;
+            return seletedShoulderWorkouts;
             break;
 
             case 'biceps':
