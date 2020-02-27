@@ -12,18 +12,16 @@ import workoutSelector from '../selectors/selector';
 
     const {currentWorkouts, setCurrentWorkouts} = useContext(DisplayedContext)
 
-    // useEffect(() => {
-    //     setCurrentWorkouts([...currentWorkouts]);
-    // })
     const inputValue = (e) => {
          const value = e.target.value; 
          setState(() => ({
              value
          }))
-
      };
      const resetForm = () => {
-        
+    //******* RESET FORM AND BUTTON STATE */
+    setCurrentWorkouts([]);
+    setbuttonState(false);
      };
      const onSubmit = (e) => {
         e.preventDefault();
@@ -32,9 +30,6 @@ import workoutSelector from '../selectors/selector';
         let workoutArray = Object.keys(workoutPackage);
         workoutArray = Object.values(workoutPackage);
         setCurrentWorkouts([...workoutArray]);
-    
-// console.log(currentWorkouts)
-            // this.props.handleSubmit();
      };
                 return (
                     < WorkoutContext.Provider>
@@ -51,8 +46,9 @@ import workoutSelector from '../selectors/selector';
                                 <option value='cardio'>Cardio</option>
                             </select>
                             <div><button type='submit'disabled={buttonState}>Generate</button>
-                                <button onClick={resetForm}>Reset Randomizer</button></div>
+                            </div>
                         </form>
+                        <button onClick={resetForm}>Reset</button>
                 </div>
                     </WorkoutContext.Provider>
         );
