@@ -1,4 +1,4 @@
-import React, { useContext, useState} from 'react';
+import React, { useContext, useState, useEffect} from 'react';
 import DisplayedContext from '../context/displayedContext';
 import WorkoutContext from '../context/workoutContext';
 import workoutSelector from '../selectors/selector';
@@ -6,11 +6,14 @@ import workoutSelector from '../selectors/selector';
   const GenerateForm = (props) => {
     const workouts = useContext(WorkoutContext);
     const [state, setState] = useState({
-        value: 'default'
+        value: 'chest'
     });
 
-    const {currentWorkouts, setCurrenWorkouts} = useContext(DisplayedContext)
+    const {currentWorkouts, setCurrentWorkouts} = useContext(DisplayedContext)
 
+    // useEffect(() => {
+    //     setCurrentWorkouts([...currentWorkouts]);
+    // })
     const inputValue = (e) => {
          const value = e.target.value; 
          setState(() => ({
@@ -21,8 +24,11 @@ import workoutSelector from '../selectors/selector';
      const onSubmit = (e) => {
         e.preventDefault();
         const workoutPackage = workoutSelector(state, workouts);
-        console.log(workoutPackage);
-        console.log(currentWorkouts);
+        let workoutArray = Object.keys(workoutPackage);
+        workoutArray = Object.values(workoutPackage);
+        setCurrentWorkouts([...workoutArray]);
+    
+// console.log(currentWorkouts)
             // this.props.handleSubmit();
      };
                 return (
@@ -30,7 +36,6 @@ import workoutSelector from '../selectors/selector';
                         <div>
                         <form onSubmit={onSubmit}>              
                             <select value={state.value} onChange={inputValue}>
-                                <option value='default'> </option>
                                 <option value='chest'>Chest</option>
                                 <option value='back'>Back</option>
                                 <option value='biceps'>Biceps</option>

@@ -4,12 +4,8 @@ import GenerateForm from './Form';
 import RandomDisplay from './RandomDisplay';
 
 const DashboardPage = (props) => {
-    let [currentWorkouts, setCurrentWorkouts] = useState([]);
-    console.log(currentWorkouts);
+    const [currentWorkouts, setCurrentWorkouts] = useState([]);
 	// const handleSubmit = () => {
-	// 	setCurrentWorkouts(() => {
-		
-	// });
     // }
     return(
         <div>
