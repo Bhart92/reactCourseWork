@@ -1,7 +1,6 @@
 import React from 'react';
 import { BrowserRouter, Route, Switch} from 'react-router-dom';
 // import Header from './components/Header';
-import Header from '../components/Header';
 import LandingPage from '../components/LandingPage';
 import DashboardPage from '../components/DashboardPage';
 import SavedWorkoutDisplay from '../components/SavedWorkoutDisplay';

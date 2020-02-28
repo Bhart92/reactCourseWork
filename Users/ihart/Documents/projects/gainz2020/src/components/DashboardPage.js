@@ -1,4 +1,4 @@
-import React, {useContext, createContext, useState} from 'react';
+import React, {useState} from 'react';
 import SavedWorkoutsContext from '../context/savedWorkoutsContext';
 import DisplayedContext from '../context/displayedContext';
 import GenerateForm from './Form';
@@ -7,7 +7,7 @@ import Header from '../components/Header';
 
 const DashboardPage = (props) => {
     const [currentWorkouts, setCurrentWorkouts] = useState([]);
-    const [savedWorkouts, setSavedWorkouts] = useState([]);
+    const [savedWorkouts, setSavedWorkouts] = useState({});
     return(
         <div>
          <Header />

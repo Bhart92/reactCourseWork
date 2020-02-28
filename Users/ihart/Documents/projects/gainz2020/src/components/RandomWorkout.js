@@ -7,10 +7,7 @@ const RandomWorkout = (props) => {
 
     return(
 	<div>
-		<div>
-    <p>{props.name} | {props.url}</p>
-    <button onClick={props.onSave}> Save</button>
-		</div>
+
 	</div>
     );
 };

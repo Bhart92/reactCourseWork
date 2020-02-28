@@ -1,4 +1,4 @@
-import React, { useContext, useState, useEffect} from 'react';
+import React, { useContext, useState} from 'react';
 import DisplayedContext from '../context/displayedContext';
 import WorkoutContext from '../context/workoutContext';
 import workoutSelector from '../selectors/selector';
@@ -10,7 +10,7 @@ import workoutSelector from '../selectors/selector';
     });
     const [buttonState, setbuttonState] = useState(false);
 
-    const {currentWorkouts, setCurrentWorkouts} = useContext(DisplayedContext)
+    const {setCurrentWorkouts} = useContext(DisplayedContext)
 
     const inputValue = (e) => {
          const value = e.target.value; 

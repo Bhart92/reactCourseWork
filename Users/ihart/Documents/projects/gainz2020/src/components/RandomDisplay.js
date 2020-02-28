@@ -1,29 +1,33 @@
-import React, { useContext, useState, useEffect} from 'react';
+import React, { useContext} from 'react';
 import SavedWorkoutsContext from '../context/savedWorkoutsContext';
 import DisplayedContext from '../context/displayedContext';
-import RandomWorkout from './RandomWorkout';
 const RandomDisplay = (props) => {
     const {savedWorkouts, setSavedWorkouts} = useContext(SavedWorkoutsContext);
     const {currentWorkouts} = useContext(DisplayedContext);
+    const savedData = [];
     const onSave = () => {
         setSavedWorkouts(prevState => ({
             ...prevState,
-          ...props
-        }));
-        console.log(savedWorkouts)
-      }
+            ...savedData
+                }))
+    }
+    console.log(savedWorkouts[0]);
     return(
 	<div>
 		<h1>Workouts</h1>
 		{currentWorkouts.length === 0 && <p>Generate some workouts to get started.</p>}
 		{
 			currentWorkouts.map((workout, index) => (
-				<RandomWorkout key={workout} 
-						name={workout.name}
-                        url={workout.url}
-                        onSave={onSave}/>
+                <div>
+                <p>{workout.name} | {workout.url}</p>
+                <button onClick={() => {
+                    savedData.push(workout)
+                    console.log(savedData);
+                }}> Save</button>
+                    </div>
 			))
 		}
+        <button onClick={onSave}>Submit</button>
 	</div>
 
 

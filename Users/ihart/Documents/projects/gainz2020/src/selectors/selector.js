@@ -15,8 +15,6 @@ export default (state, workouts) => {
 		seletedChestWorkouts.chestTwo = chest.workouts[Math.floor(Math.random() * chest.workouts.length)];
 	}
             return seletedChestWorkouts;
-            break;
-
             case 'back':
                 const {back} = workoutData;
             let seletedBackWorkouts = {
@@ -30,7 +28,7 @@ export default (state, workouts) => {
 		seletedBackWorkouts.backTwo = back.workouts[Math.floor(Math.random() * back.workouts.length)];
 	}
             return seletedBackWorkouts;
-            break;
+            
 
             case 'shoulders':
                 const {shoulders} = workoutData;
@@ -46,7 +44,6 @@ export default (state, workouts) => {
 		seletedShoulderWorkouts.shouldersTwo = shoulders.workouts[Math.floor(Math.random() * shoulders.workouts.length)];
 	}
             return seletedShoulderWorkouts;
-            break;
 
             case 'biceps':
                 const {biceps} = workoutData;
@@ -61,7 +58,6 @@ export default (state, workouts) => {
 		seletedBicepsWorkouts.bicepsTwo = biceps.workouts[Math.floor(Math.random() * biceps.workouts.length)];
 	}
             return seletedBicepsWorkouts;
-            break;
 
             case 'triceps':
                 const {triceps} = workoutData;
@@ -76,7 +72,6 @@ export default (state, workouts) => {
 		seletedtricepsWorkouts.tricepsTwo = triceps.workouts[Math.floor(Math.random() * triceps.workouts.length)];
 	}
             return seletedtricepsWorkouts;
-            break;
 
             case  'legs':
                 const {legs} = workoutData;
@@ -91,7 +86,6 @@ export default (state, workouts) => {
 		seletedLegWorkouts.legsTwo = legs.workouts[Math.floor(Math.random() * legs.workouts.length)];
 	}
             return seletedLegWorkouts;
-            break;
 
             case 'abs':
                 const {abs} = workoutData;
@@ -106,7 +100,6 @@ export default (state, workouts) => {
 		seletedAbWorkouts.absTwo = abs.workouts[Math.floor(Math.random() * abs.workouts.length)];
 	}
             return seletedAbWorkouts;
-            break;
 
             case 'cardio':
                 const {cardio} = workoutData;
@@ -121,9 +114,7 @@ export default (state, workouts) => {
 		seletedCardioWorkouts.cardioTwo = cardio.workouts[Math.floor(Math.random() * cardio.workouts.length)];
 	}
             return seletedCardioWorkouts;
-            break;
             default:
                 return state;
-                break;
             }
         }
