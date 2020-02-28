@@ -1,8 +1,17 @@
 import React, { useContext, useState, useEffect} from 'react';
+import SavedWorkoutsContext from '../context/savedWorkoutsContext';
 import DisplayedContext from '../context/displayedContext';
 import RandomWorkout from './RandomWorkout';
 const RandomDisplay = (props) => {
-    const {currentWorkouts, setCurrentWorkouts} = useContext(DisplayedContext);
+    const {savedWorkouts, setSavedWorkouts} = useContext(SavedWorkoutsContext);
+    const {currentWorkouts} = useContext(DisplayedContext);
+    const onSave = () => {
+        setSavedWorkouts(prevState => ({
+            ...prevState,
+          ...props
+        }));
+        console.log(savedWorkouts)
+      }
     return(
 	<div>
 		<h1>Workouts</h1>
@@ -11,7 +20,8 @@ const RandomDisplay = (props) => {
 			currentWorkouts.map((workout, index) => (
 				<RandomWorkout key={workout} 
 						name={workout.name}
-                        url={workout.url}/>
+                        url={workout.url}
+                        onSave={onSave}/>
 			))
 		}
 	</div>

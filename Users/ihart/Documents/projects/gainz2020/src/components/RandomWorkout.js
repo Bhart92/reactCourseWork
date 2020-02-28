@@ -1,21 +1,17 @@
 import React, { useContext, useState, useEffect} from 'react';
-import DisplayedContext from '../context/displayedContext';
+import SavedWorkoutsContext from '../context/savedWorkoutsContext';
+
 
 const RandomWorkout = (props) => {
-    const {currentWorkouts, setCurrentWorkouts} = useContext(DisplayedContext);
-    const saveWorkout = () => {
+    const {savedWorkouts, setSavedWorkouts} = useContext(SavedWorkoutsContext);
 
-      
-    };
     return(
 	<div>
 		<div>
     <p>{props.name} | {props.url}</p>
-    <button onClick={saveWorkout}>Save</button>
+    <button onClick={props.onSave}> Save</button>
 		</div>
 	</div>
-
-
     );
 };
 
