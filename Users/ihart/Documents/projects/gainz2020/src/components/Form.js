@@ -8,8 +8,6 @@ import workoutSelector from '../selectors/selector';
     const [state, setState] = useState({
         value: 'chest'
     });
-    const [buttonState, setbuttonState] = useState(false);
-
     const {setCurrentWorkouts} = useContext(DisplayedContext)
 
     const inputValue = (e) => {
@@ -21,14 +19,11 @@ import workoutSelector from '../selectors/selector';
      const resetForm = () => {
     //******* RESET FORM AND BUTTON STATE */
     setCurrentWorkouts([]);
-    setbuttonState(false);
      };
      const onSubmit = (e) => {
         e.preventDefault();
-        setbuttonState(true);
-        const workoutPackage = workoutSelector(state, workouts);
-        let workoutArray = Object.keys(workoutPackage);
-        workoutArray = Object.values(workoutPackage);
+        const workoutArray = workoutSelector(state, workouts);
+        // console.log(workoutArray)
         setCurrentWorkouts([...workoutArray]);
      };
                 return (
@@ -45,7 +40,7 @@ import workoutSelector from '../selectors/selector';
                                 <option value='abs'>Abs</option>
                                 <option value='cardio'>Cardio</option>
                             </select>
-                            <div><button type='submit'disabled={buttonState}>Generate</button>
+                            <div><button type='submit'>Generate</button>
                             </div>
                         </form>
                         <button onClick={resetForm}>Reset</button>

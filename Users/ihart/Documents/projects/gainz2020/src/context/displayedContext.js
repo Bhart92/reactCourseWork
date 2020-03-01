@@ -1,5 +1,5 @@
 import {createContext} from 'react';
 
-const DisplayedContext = createContext([]);
+const DisplayedContext = createContext({});
 
 export { DisplayedContext as default}
