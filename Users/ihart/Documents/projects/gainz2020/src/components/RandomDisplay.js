@@ -10,12 +10,15 @@ const RandomDisplay = (props) => {
         // console.log(res)
     let array = [];
     const handleSave = () => {
+
         array.forEach(obj => {
             res[obj.name] = obj.name;
             res[obj.name + '_url'] = obj.url;
             res[obj.name + '_value'] = obj.value;
             res[obj.name + '_id'] = obj.id;
+            
         })
+
         setSavedWorkouts(prevState => ({
             ...prevState,
             ...res
