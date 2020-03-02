@@ -10,6 +10,7 @@ const DashboardPage = (props) => {
         <h1>Generate workouts</h1>
         <GenerateForm />
         <RandomDisplay />
+        {console.log(sessionStorage.getItem('workouts'))}
     </div>
     )
     };

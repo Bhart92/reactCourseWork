@@ -10,21 +10,19 @@ const RandomDisplay = (props) => {
         // console.log(res)
     let array = [];
     const handleSave = () => {
-
         array.forEach(obj => {
             res[obj.name] = obj.name;
             res[obj.name + '_url'] = obj.url;
             res[obj.name + '_value'] = obj.value;
-            res[obj.name + '_id'] = obj.id;
-            
         })
-
+    
+        const sessionData = JSON.stringify(res);
+        sessionStorage.setItem('workouts', sessionData);
         setSavedWorkouts(prevState => ({
             ...prevState,
             ...res
         }))
     }
-    console.log(savedWorkouts);
     return(
 	<div>
 		<h1>Workouts</h1>
