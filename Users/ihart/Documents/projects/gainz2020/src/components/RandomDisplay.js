@@ -1,6 +1,8 @@
 import React, { useContext} from 'react';
 import SavedWorkoutsContext from '../context/savedWorkoutsContext';
 import DisplayedContext from '../context/displayedContext';
+
+
 const RandomDisplay = (props) => {
     const {savedWorkouts, setSavedWorkouts} = useContext(SavedWorkoutsContext);
     const {currentWorkouts} = useContext(DisplayedContext);
@@ -23,6 +25,7 @@ const RandomDisplay = (props) => {
             ...res
         }))
     }
+    console.log(savedWorkouts);
     return(
 	<div>
 		<h1>Workouts</h1>
