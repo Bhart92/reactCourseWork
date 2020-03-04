@@ -1,0 +1,51 @@
+* {
+    box-sizing: border-box;
+  }
+  
+  html {
+    font-size: 66%;
+    font-family: $font-lato;
+  }
+  ::-webkit-scrollbar {
+    width: 0px;  /* Remove scrollbar space */
+    background: transparent;  /* Optional: just make scrollbar invisible */
+}
+/* Optional: show position indicator in red */
+::-webkit-scrollbar-thumb {
+    background: $off-white;
+}
+
+body{
+    color: black;
+    background-color: #5A5766;
+    font-family: Helvetica, Arial, sans-serif;
+    font-size: $m-size;
+    line-height: 1.6;
+}
+h1{
+  margin: 0;
+}
+a{
+    color: #5A5766;
+    font-weight: 300;
+    padding: 10px;
+    margin: -10px;
+    text-decoration: none;
+    transition: .25s all ease-in-out;
+    &:hover{
+      color: darkgreen;
+    }
+  }
+
+  ul li{
+    list-style-type: none;
+  }
+  
+  button {
+    cursor: pointer;
+  }
+  .container{
+    align-items: center;
+    display: flex;
+    height: 100vh;
+  }

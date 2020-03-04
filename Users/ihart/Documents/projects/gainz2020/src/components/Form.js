@@ -9,7 +9,6 @@ import workoutSelector from '../selectors/selector';
         value: 'chest'
     });
     const {setCurrentWorkouts} = useContext(DisplayedContext)
-
     const inputValue = (e) => {
          const value = e.target.value; 
          setState(() => ({
@@ -28,9 +27,9 @@ import workoutSelector from '../selectors/selector';
      };
                 return (
                     < WorkoutContext.Provider>
-                        <div>
-                        <form onSubmit={onSubmit}>              
-                            <select value={state.value} onChange={inputValue}>
+                        <div className='generate-form'>
+                        <form className='generate-form--form' onSubmit={onSubmit}>              
+                            <select className='generate-form--select' value={state.value} onChange={inputValue}>
                                 <option value='chest'>Chest</option>
                                 <option value='back'>Back</option>
                                 <option value='biceps'>Biceps</option>

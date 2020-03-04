@@ -1,12 +1,15 @@
-import React, { useContext} from 'react';
+import React, { useContext, useState} from 'react';
 import SavedWorkoutsContext from '../context/savedWorkoutsContext';
 import DisplayedContext from '../context/displayedContext';
+import SaveButton from './SaveButton';
 
 
 const RandomDisplay = (props) => {
     const {savedWorkouts, setSavedWorkouts} = useContext(SavedWorkoutsContext);
     const {currentWorkouts} = useContext(DisplayedContext);
+    const [saved, setSaved] = useState('');
     let currentworkout = Object.values(currentWorkouts); 
+
     // console.log(currentworkout);
     const res = {};
         // console.log(res)
@@ -17,31 +20,30 @@ const RandomDisplay = (props) => {
             res[obj.name + '_url'] = obj.url;
             res[obj.name + '_value'] = obj.value;
         })
-    
         const sessionData = JSON.stringify(res);
         sessionStorage.setItem('workouts', sessionData);
         setSavedWorkouts(prevState => ({
             ...prevState,
             ...res
         }))
+        setSaved('Goto Saved Workouts to view list');
     }
-    console.log(savedWorkouts);
+
     return(
 	<div>
 		<h1>Workouts</h1>
+        {currentworkout.length === 0 && <p>Generate some workouts to get started.</p>}
 		{
 			currentworkout.map((workout, index) => {
-                return (<div key={workout.id}>
-                <p>{workout.name}</p>
-                <div><button onClick={() => {
-                    return array.push(workout);
-                }}>Save</button>
-                </div>
-
+                return (<div onClick={() => {
+                    array.push(workout);
+                }} key={workout.id}>
+                <p >{workout.name}</p>
+                <SaveButton />
                 </div>)
         })
 		}
-    <div><button onClick={handleSave}>submit</button></div>
+    <div><button onClick={handleSave}>submit</button><span>{saved}</span></div>
 	</div>
 
 

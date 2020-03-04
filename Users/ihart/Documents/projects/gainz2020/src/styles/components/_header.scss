@@ -1,0 +1,16 @@
+.header{
+    align-items: center;
+    background: $off-white;
+    display: flex;
+    justify-content: space-between;
+    padding: 0 25px;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+}
+.header--h1{
+    font-family: $font-fugaz;
+    font-size: 4rem;
+    color: #5A5766;
+}

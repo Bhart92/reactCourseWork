@@ -5,12 +5,13 @@ import Header from '../components/Header';
 
 const DashboardPage = (props) => {
     return(
-        <div>
+        <div className='container'>
          <Header />
-        <h1>Generate workouts</h1>
-        <GenerateForm />
-        <RandomDisplay />
-        {console.log(sessionStorage.getItem('workouts'))}
+         <section className='dashboard-container'>
+         <h1>Generate workouts</h1>
+            <GenerateForm />
+            <RandomDisplay />
+         </section>
     </div>
     )
     };
