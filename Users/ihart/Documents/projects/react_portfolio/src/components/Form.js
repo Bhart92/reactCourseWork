@@ -100,7 +100,7 @@ class Form extends React.Component{
 					<Recaptcha
 					className="captcha"
 					type="checkbox"
-					sitekey={process.env.REACT_APP_SITE_KEY}
+					sitekey='6LelC9gUAAAAAN-JTSd3WcSHErs9eA3GU2Agoz1B'
 				/>
 					<button disabled={this.state.disabled}
 					className='button-outline'>{this.state.buttonText}</button>

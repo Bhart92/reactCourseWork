@@ -17,24 +17,6 @@ const projects = [
 		imageAlt: 'Mint Condition Landing Page',
 		url: 'https://thawing-savannah-84432.herokuapp.com/',
 		tech: 'HTML 5 | CSS 3 | JQuery'
-	},
-	{
-		title: 'Mint Condition Tattoo',
-		description: 'Mint Condition Tattoo is a tattoo and piercing parlor located in Upland, CA',
-		image: '/images/thirdEye.webp',
-		imageStatus: false,
-		imageAlt: 'Mint Condition Landing Page',
-		url: 'https://thawing-savannah-84432.herokuapp.com/',
-		tech: 'HTML 5 | CSS 3 | JQuery'
-	},
-	{
-		title: 'Mint Condition Tattoo',
-		description: 'Mint Condition Tattoo is a tattoo and piercing parlor located in Upland, CA',
-		image: '/images/thirdEye.webp',
-		imageStatus: false,
-		imageAlt: 'Mint Condition Landing Page',
-		url: 'https://thawing-savannah-84432.herokuapp.com/',
-		tech: 'HTML 5 | CSS 3 | JQuery'
 	}
 ];
 
